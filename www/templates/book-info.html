@@ -1,0 +1,32 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+  <div class="bar bar-header bar-positive">
+    <button class="button icon button-icon ion-ios-arrow-back go-back-button" go-back>書云</button>
+    <h1 class="title">{{book.title}}</h1>
+    <!-- <button class="button icon button-icon pull-right ion-navicon" ng-click="openModal()"></button> -->
+  </div>
+  <ion-content class="has-header" scroll="false">
+
+    <div class="row">
+      <div class="col col-33"><img ng-src="{{book.thumbnail}}"></div>
+      <div class="col col-50">
+        <h4>{{book.creator}}</h4>
+        <p>分類：{{book.category}}</p>
+        <p>字數：{{book.total_words}}</p>
+        <p>狀態：完本</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-33">
+        <md-button class="no-margin md-raised md-warn">立即閱讀</md-button>
+      </div>
+      <div class="col col-33">
+        <md-button class="no-margin md-raised md-warn">加入書架</md-button>
+      </div>
+      <div class="col col-33">
+        <md-button class="no-margin md-raised md-warn">全本緩存</md-button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

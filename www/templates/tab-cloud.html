@@ -1,0 +1,19 @@
+<ion-view view-title="書云">
+  <ion-content>
+      <!-- <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/read/123" nav-direction="forward">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item> -->
+      <md-button class="mind-reader-cloud-book-item" ng-repeat="book in books" ng-click="read(book)" nav-direction="forward">
+        <img ng-src="{{book.thumbnail}}">
+        <h2>{{book.title}}</h2>
+        <p>{{book.description}}</p>
+      </md-button>
+  </ion-content>
+</ion-view>

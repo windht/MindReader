@@ -1,0 +1,46 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view hide-nav-bar="true" cache-view="false">
+  <div class="bar bar-header bar-transparent bar-animated" ng-class="{'hide':!titleShow}">
+    <button class="button icon button-icon ion-ios-arrow-back go-back-button" ng-click="back()" nav-direction="back">書單</button>
+    <h1 class="title">{{meta.bookTitle}}</h1>
+    <button class="button icon button-icon pull-right ion-navicon" ng-click="openModal()"></button>
+  </div>
+  <div class="bar bar-footer bar-transparent bar-animated" ng-class="{'hide':!titleShow}">
+    <button class="button button-clear pull-left" ng-click="prev()">Prev</button>
+    <h1 class="title" ng-click="test()">Test</h1>
+    <button class="button button-clear pull-right" ng-click="next()">Next</button>
+  </div>
+  <ion-content class="padding" scroll="false">
+    <!-- <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    <p>
+      {{chat.lastText}}
+    </p> -->
+    
+    <ion-slide-box
+      show-pager="false"
+      on-slide-changed="slideHasChanged($index)"
+      does-continue="true"
+      active-slide="$parent.currentSlide"
+    >
+      <ion-slide>
+        <div class="cover" ng-click="showTitle()"></div>
+        <div id="page-1" style="height:100%;width:100%;"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="cover" ng-click="showTitle()"></div>
+        <div id="page-2" style="height:100%;width:100%;"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="cover" ng-click="showTitle()"></div>
+        <div id="page-3" style="height:100%;width:100%;"></div>
+      </ion-slide>
+    </ion-slide-box>
+
+    
+  </ion-content>
+</ion-view>
