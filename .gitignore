@@ -2,9 +2,9 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
-platforms/
-plugins/
-hooks/
-scss/
-www/lib/
+mobile/platforms/
+mobile/plugins/
+mobile/hooks/
+mobile/scss/
+mobile/www/lib/
 
