@@ -4,11 +4,11 @@
     <h1 class="title">{{book.title}}</h1>
     <!-- <button class="button icon button-icon pull-right ion-navicon" ng-click="openModal()"></button> -->
   </div>
-  <ion-content class="has-header" scroll="false">
+  <ion-content class="has-header">
 
     <div class="row">
       <div class="col col-33"><img ng-src="{{book.thumbnail}}"></div>
-      <div class="col col-50">
+      <div class="col col-50" style="padding-left:30px;">
         <h4>{{book.creator}}</h4>
         <p>分類：{{book.category}}</p>
         <p>字數：{{book.total_words}}</p>
@@ -16,9 +16,9 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="border-bottom: 1px solid #A0A0A0;">
       <div class="col col-33">
-        <md-button class="no-margin md-raised md-warn">立即閱讀</md-button>
+        <md-button class="no-margin md-raised md-warn" ng-click="read(book)">立即閱讀</md-button>
       </div>
       <div class="col col-33">
         <md-button class="no-margin md-raised md-warn">加入書架</md-button>
@@ -26,6 +26,20 @@
       <div class="col col-33">
         <md-button class="no-margin md-raised md-warn">全本緩存</md-button>
       </div>
+    </div>
+
+
+    <p style="margin:10px;font-size:15px">內容簡介</p>
+
+
+    <div class="row">
+      <md-button class="no-margin md-raised full-width">最新章節 {{book.last_chapter_name}}</md-button>
+    </div>
+
+    <p style="margin:20px;">{{book.description}}</p>
+
+    <div class="row">
+      <md-button class="no-margin md-raised full-width">查看目錄</md-button>
     </div>
 
   </ion-content>

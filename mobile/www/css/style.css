@@ -65,6 +65,10 @@ button.button.go-back-button:before {
 	margin:0;
 }
 
+.md-button.full-width {
+	width: 100%;
+}
+
 .center-notice {
 	width: 100%;
 
@@ -104,7 +108,7 @@ button.button.go-back-button:before {
 	font-size: 16px;
 	text-align: left;
 
-	margin-top: 0px;
+	margin-top: 10px;
 }
 
 .mind-reader-cloud-book-item > p {
@@ -115,4 +119,7 @@ button.button.go-back-button:before {
 	white-space: normal;
 
 	color: #8C8C8C;
+
+	max-height: 30px;
+    overflow: hidden;
 }

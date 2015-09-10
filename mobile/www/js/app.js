@@ -51,9 +51,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   })
 
   .state('tab.read', {
-    url: '/read/:bookId',
+    url: '/read/:bookPath',
     views: {
-      'tab-books': {
+      '@': {
         templateUrl: 'templates/books-read.html',
         controller: 'BooksReadCtrl'
       }

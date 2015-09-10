@@ -30,15 +30,19 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('BookInfoCtrl', function($scope,$stateParams) {
+.controller('BookInfoCtrl', function($scope,$stateParams,$state) {
   $scope.book=JSON.parse($stateParams.book);
-  console.log($scope.book)
+  console.log($scope.book);
+  $scope.read=function(book){
+    $state.go('tab.read',{bookPath:book.online_path})
+  }
 })
 
 .controller('BooksReadCtrl', function($scope, $stateParams, Chats,$ionicSlideBoxDelegate,$ionicModal,$state) {
-  $scope.chat = Chats.get($stateParams.chatId);
-  $scope.titleShow=false;
+  var bookPath=$stateParams.bookPath;
   var Book1,Book2,Book3;
+
+  $scope.titleShow=false;
 
   $ionicModal.fromTemplateUrl('templates/toc.html', {
     scope: $scope,
@@ -108,9 +112,9 @@ angular.module('starter.controllers', [])
 
   $scope.$on('$ionicView.beforeEnter',function(){
 
-    Book1 = ePub("21695/");
-    Book2 = ePub("21695/");
-    Book3 = ePub("21695/");
+    Book1 = ePub(bookPath);
+    Book2 = ePub(bookPath);
+    Book3 = ePub(bookPath);
 
     Book1.renderTo('page-1').then(function(){
       Book1.getMetadata().then(function(meta){
